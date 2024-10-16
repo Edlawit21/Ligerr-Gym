@@ -3,3 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d0d0d4 #f1f1f1;
+}
