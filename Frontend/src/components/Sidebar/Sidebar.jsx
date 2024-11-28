@@ -43,7 +43,6 @@ const Sidebar = ({ role, collapsed }) => {
         mode="inline"
         items={items}
         onClick={handleClick}
-        inlineCollapsed={collapsed}
         style={{
           height: "100%",
           overflowY: "auto",

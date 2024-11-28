@@ -45,6 +45,7 @@ const AdminDashboard = () => {
       {!screens.xs && (
         <Sider
           theme="light"
+          trigger={null}
           collapsible
           collapsed={collapsed}
           collapsedWidth={80}
@@ -78,7 +79,7 @@ const AdminDashboard = () => {
           />
           <Navbar />
         </Header>
-        <Content style={{ padding: 16, overflowY: "auto" }}>
+        <Content style={{ height: "100%", overflowY: "auto" }}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/aerobics" element={<Aerobics />} />

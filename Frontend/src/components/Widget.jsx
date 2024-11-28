@@ -51,34 +51,21 @@ const Widget = () => {
               maxWidth: "100%",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "16px",
-              }}
-            >
+            <div className="flex items-center mb-4">
               <div
+                className="flex items-center justify-center w-12 h-12 rounded-lg p-3 mr-2"
                 style={{
                   backgroundColor: item.bgColor,
-                  borderRadius: "8px",
-                  padding: "12px",
-                  marginRight: "12px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "50px",
-                  height: "50px",
                 }}
               >
                 {item.icon}
               </div>
               <div>
-                <h4 style={{ margin: 0, fontWeight: "bold" }}>{item.title}</h4>
-                <h2 style={{ margin: 0 }}>{item.value}</h2>
+                <h4 className="m-0 font-bold">{item.title}</h4>
+                <h2>{item.value}</h2>
               </div>
             </div>
-            <p style={{ color: "#52c41a", fontWeight: 500 }}>{item.change}</p>
+            <p className="text-green-500 font-medium">{item.change}</p>
           </Card>
         </Col>
       ))}
