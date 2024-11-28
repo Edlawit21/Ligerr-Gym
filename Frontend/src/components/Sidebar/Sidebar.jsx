@@ -56,7 +56,7 @@ const Sidebar = ({ role, collapsed }) => {
 
 Sidebar.propTypes = {
   role: PropTypes.string.isRequired, // Role must be a string
-  collapsed: PropTypes.bool.isRequired, // Collapsed must be a boolean
+  collapsed: PropTypes.bool, // Collapsed must be a boolean
 };
 
 export default Sidebar;

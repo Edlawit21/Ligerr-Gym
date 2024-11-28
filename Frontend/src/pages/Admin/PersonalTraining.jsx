@@ -13,7 +13,7 @@ const roleOptions = [
   { value: "pmanager", label: "Pharmacy Manager" },
 ];
 
-const PersonalTraining = () => {
+const Taekwondo = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,10 +37,30 @@ const PersonalTraining = () => {
   );
 
   const columnUser = [
-    { title: "Name", dataIndex: "name", key: "name" },
-    { title: "Gender", dataIndex: "gender", key: "gender" },
-    { title: "Role", dataIndex: "role", key: "role" },
-    { title: "Status", dataIndex: "status", key: "status" },
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      sorter: (a, b) => a.name.localeCompare(b.name), // Sort by name
+    },
+    {
+      title: "Gender",
+      dataIndex: "gender",
+      key: "gender",
+      sorter: (a, b) => a.gender.localeCompare(b.gender), // Sort by gender
+    },
+    {
+      title: "Role",
+      dataIndex: "role",
+      key: "role",
+      sorter: (a, b) => a.role.localeCompare(b.role), // Sort by role
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      sorter: (a, b) => a.status.localeCompare(b.status), // Sort by status
+    },
     {
       title: "Action",
       key: "action",
@@ -69,7 +89,7 @@ const PersonalTraining = () => {
   const handleToggle = (record) => {
     setUsersData((prevData) =>
       prevData.map((user) =>
-        user.name === record.name
+        user.key === record.key
           ? {
               ...user,
               status: user.status === "Active" ? "Inactive" : "Active",
@@ -104,16 +124,18 @@ const PersonalTraining = () => {
     defaultPageSize,
     total: filteredData.length,
     current: currentPage,
-    onChange: (page) => setCurrentPage(page),
+    onChange: (page) => {
+      setCurrentPage(page);
+    },
     showTotal: (total, range) =>
       `Showing ${range[0]}-${range[1]} of ${total} items`,
     position: ["bottomCenter"],
   };
 
   return (
-    <div className="w-full h-full">
-      <h2 className="pb-2 font-semibold text-2xl">PersonalTraining</h2>
-      <div className="w-full flex items-end justify-between">
+    <div className=" h-full mx-6">
+      <h2 className="py-4 font-semibold text-2xl">Personal Trainers</h2>
+      <div className="w-full flex items-end justify-between pb-2">
         <Input
           placeholder="Search"
           size="large"
@@ -147,15 +169,7 @@ const PersonalTraining = () => {
       <div>
         <Table
           className="center-head"
-          rowSelection={{
-            onChange: (selectedRowKeys, selectedRows) => {
-              console.log(
-                `selectedRowKeys: ${selectedRowKeys}`,
-                "selectedRows: ",
-                selectedRows
-              );
-            },
-          }}
+          rowSelection={{}}
           columns={columnUser}
           dataSource={filteredData}
           pagination={pagination}
@@ -164,9 +178,7 @@ const PersonalTraining = () => {
             borderRadius: "8px",
             marginTop: "16px",
             background: "white",
-            border: "1px solid #E3E6EB",
           }}
-          showSorterTooltip={false}
           scroll={{ x: 10 }}
         />
       </div>
@@ -174,4 +186,4 @@ const PersonalTraining = () => {
   );
 };
 
-export default PersonalTraining;
+export default Taekwondo;

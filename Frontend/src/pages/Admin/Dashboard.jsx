@@ -3,6 +3,7 @@ import Widget from "../../components/Widget";
 import RegisterMember from "../../components/RegisterMember";
 import { useState } from "react";
 import TableAll from "../../components/TableAll";
+import Piechart from "../../components/Piechart";
 
 const Dashboard = () => {
   const [isModalVisible, setIsModalVisible] = useState(false); // State to manage modal visibility
@@ -31,7 +32,9 @@ const Dashboard = () => {
         <div className=" w-[70%] rounded-lg">
           <TableAll />
         </div>
-        <div className="shadow-lg rounded-lg w-72 bg-white"></div>
+        <div className="shadow-lg rounded-lg w-72 bg-white">
+          <Piechart />
+        </div>
       </div>
     </div>
   );

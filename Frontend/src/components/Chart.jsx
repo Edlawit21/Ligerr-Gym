@@ -119,7 +119,7 @@ const Chart2 = () => {
               color: "#999B9E",
             }}
             itemStyle={{
-              marginLeft: "30px",
+              marginLeft: "36px",
               display: "list-item",
               listStyleType: "disc",
             }}
@@ -127,7 +127,7 @@ const Chart2 = () => {
           {/* Each Bar has a unique dataKey */}
           <Bar
             dataKey="active"
-            fill="#2288FF"
+            fill="#52C41A"
             hide={!visibleKeys.includes("active")}
           >
             <LabelList
@@ -141,7 +141,7 @@ const Chart2 = () => {
           </Bar>
           <Bar
             dataKey="inactive"
-            fill="#0DCCCC"
+            fill="#FF5722"
             hide={!visibleKeys.includes("inactive")}
           >
             <LabelList
@@ -149,13 +149,13 @@ const Chart2 = () => {
               position="insideTop"
               style={{
                 fontSize: 12,
-                fill: "#167074",
+                fill: "#802509",
               }}
             />
           </Bar>
           <Bar
             dataKey="overdue"
-            fill="#F18E56"
+            fill="#2288FF"
             hide={!visibleKeys.includes("overdue")}
           >
             <LabelList
@@ -163,11 +163,11 @@ const Chart2 = () => {
               position="insideTop"
               style={{
                 fontSize: 12,
-                fill: "#6E4A3A",
+                fill: "#204777",
               }}
             />
           </Bar>
-          <Bar dataKey="new" fill="#D686FF" hide={!visibleKeys.includes("new")}>
+          <Bar dataKey="new" fill="#FFC107" hide={!visibleKeys.includes("new")}>
             <LabelList
               valueAccessor={(data) => data.new}
               position="insideTop"

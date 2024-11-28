@@ -37,10 +37,30 @@ const Taekwondo = () => {
   );
 
   const columnUser = [
-    { title: "Name", dataIndex: "name", key: "name" },
-    { title: "Gender", dataIndex: "gender", key: "gender" },
-    { title: "Role", dataIndex: "role", key: "role" },
-    { title: "Status", dataIndex: "status", key: "status" },
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      sorter: (a, b) => a.name.localeCompare(b.name), // Sort by name
+    },
+    {
+      title: "Gender",
+      dataIndex: "gender",
+      key: "gender",
+      sorter: (a, b) => a.gender.localeCompare(b.gender), // Sort by gender
+    },
+    {
+      title: "Role",
+      dataIndex: "role",
+      key: "role",
+      sorter: (a, b) => a.role.localeCompare(b.role), // Sort by role
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      sorter: (a, b) => a.status.localeCompare(b.status), // Sort by status
+    },
     {
       title: "Action",
       key: "action",
@@ -113,9 +133,9 @@ const Taekwondo = () => {
   };
 
   return (
-    <div className="w-full h-full">
-      <h2 className="pb-2 font-semibold text-2xl">Taekwondo</h2>
-      <div className="w-full flex items-end justify-between">
+    <div className=" h-full mx-6">
+      <h2 className="py-4 font-semibold text-2xl">Taekwondo</h2>
+      <div className="w-full flex items-end justify-between pb-2">
         <Input
           placeholder="Search"
           size="large"
@@ -158,9 +178,7 @@ const Taekwondo = () => {
             borderRadius: "8px",
             marginTop: "16px",
             background: "white",
-            border: "1px solid #E3E6EB",
           }}
-          showSorterTooltip={false}
           scroll={{ x: 10 }}
         />
       </div>
